@@ -6,6 +6,7 @@ function ini(){
     $("#btnregistrar").click(enviarDatos);
     $("#singin").click(validar);
 }
+
 function enviarDatos(){
     var usuario = $("#usuario").val();
     var pass = $("#pass").val();
@@ -26,6 +27,7 @@ function enviarDatos(){
         type:"GET"
     });
 }
+
 function validar(){
     
     var usuario = $("#usuario").val();
@@ -35,7 +37,9 @@ function validar(){
         url:"validar.php",
         success:function(result){
             if(result =="true"){
-               document.location.href="menu/menu.php";    
+            
+                
+               document.location.href="menu/menu.html";    
             }else{
                 $("#resultado").html("<div class='alert alert-danger' role='alert'><b>acceso denegado, </b>no se pudo comprobar el usuario</div>");
             }
